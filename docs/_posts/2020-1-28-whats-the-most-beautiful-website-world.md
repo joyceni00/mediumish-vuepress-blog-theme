@@ -1,15 +1,15 @@
 ---
 title: What's the most beautiful website in the world
 date: 2020-1-28
-tags: 
-  - frontmatter
-  - vuepress
+tags:
+- frontmatter
+- vuepress
 author: John Doe
-featuredimg: 'https://images.unsplash.com/photo-1568777036071-f9a769596a49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=1351&q=80'
+featuredimg: https://images.unsplash.com/photo-1568777036071-f9a769596a49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=1351&q=80
 summary: Any website that uses a static generator.
----
 
-Any markdown file that contains a YAML front matter block will be processed by [gray-matter](https://github.com/jonschlinkert/gray-matter). The front matter must be the first thing in the markdown file and must take the form of valid YAML set between triple-dashed lines. Here is a basic example:
+---
+前面的內容必須是[降價](https://github.com/jonschlinkert/gray-matter)文件中的第一個內容，必須採用在三點劃線之間設置的有效 YAML 的形式。
 
 ```markdown
 ---
@@ -18,85 +18,78 @@ lang: en-US
 ---
 ```
 
-Between these triple-dashed lines, you can set predefined variables (see [below](#predefined-variables) for a reference), or even create custom ones of your own. These variables will then be available to you to access using <code>[$frontmatter](./global-computed.md#frontmatter)</code> at the rest of the page, plus all custom and theming components.
+[在三點](./global-computed.md#frontmatter)劃線之間，可以預定義（以獲取參考），甚至創建您自己的部分自定義[變量](#predefined-variables)。設置組件來訪問變量。
 
-::: tip
-Front matter variables are **optional** in VuePress.
-:::
+::: 提示 Vue 中的預告片是**的。** :::
 
-## Alternative Front Matter Formats
+## 替代材料格式
 
-In addition, VuePress also supports JSON or [TOML](https://github.com/toml-lang/toml) front matter.
+此外，VuePress 還支持 JSON 或[TOML](https://github.com/toml-lang/toml)前端。
 
-JSON front matter needs to start and end in curly braces:
+JSON 前面的內容需要以花的形式和結尾：
 
-```
----
-{
-  "title": "Blogging Like a Hacker",
-  "lang": "en-US"
-}
----
-```
+    ---
+    {
+      "title": "Blogging Like a Hacker",
+      "lang": "en-US"
+    }
+    ---
 
-TOML front matter needs to be explicitly marked as TOML:
+TOML前題需要標註為TOML：
 
-```
----toml
-title = "Blogging Like a Hacker"
-lang = "en-US"
----
-```
+    ---toml
+    title = "Blogging Like a Hacker"
+    lang = "en-US"
+    ---
 
+## 預定義變量
 
-## Predefined Variables
+### 標題
 
-### title
+* 類型：`string`
+* 默認：`h1_title || siteConfig.title`
 
-- Type: `string`
-- Default: `h1_title || siteConfig.title`
+當前頁面的標題。
 
-Title of current page.
+### 郎
 
-### lang
+* 類型：`string`
+* 默認：`en-US`
 
-- Type: `string`
-- Default: `en-US`
+當前頁面的語言。
 
-Language of current page.
+### 描述
 
-### description
+* 類型：`string`
+* 默認：`siteConfig.description`
 
-- Type: `string`
-- Default: `siteConfig.description`
+當前頁面的描述。
 
-Description of current page.
+### 佈局
 
-### layout
-
-- Type: `string`
-- Default: `Layout`
+* 類型：`string`
+* 默認：`Layout`
 
 Set the layout component of the current page.
 
 ### permalink
 
-- Type: `string`
-- Default: `siteConfig.permalink`
+* Type: `string`
+* Default: `siteConfig.permalink`
 
 Refer to: [Permalinks](./permalinks.md).
 
 ### metaTitle
 
-- Type: `string`
-- Default: <code>\`${page.title} | ${siteConfig.title}\`</code>
+* Type: `string`
+* Default: <code>\`${page.title} | ${siteConfig.title}\`</code>
 
 Override the default meta title.
 
 ### meta
 
-- Type: `array`
-- Default: `undefined`
+* Type: `array`
+* Default: `undefined`
 
 Specify extra meta tags to be injected:
 
@@ -114,14 +107,14 @@ meta:
 
 ### navbar
 
-- Type: `boolean`
-- Default: `undefined`
+* Type: `boolean`
+* Default: `undefined`
 
 See: [Default Theme Config > Disable the Navbar](../theme/default-theme-config.md#disable-the-navbar).
 
 ### sidebar
 
-- Type: `boolean|'auto'`
-- Default: `undefined`
+* Type: `boolean|'auto'`
+* Default: `undefined`
 
 See: [Default Theme Config > Sidebar](../theme/default-theme-config.md#sidebar).
