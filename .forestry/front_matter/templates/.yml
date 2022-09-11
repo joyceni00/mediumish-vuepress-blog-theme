@@ -1,0 +1,10 @@
+---
+label: 商策内容行销
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
